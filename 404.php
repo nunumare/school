@@ -4,22 +4,24 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package school
+ * @package mahlet
  */
 
 get_header();
 ?>
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'school' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'mahlet' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'school' ); ?></p>
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'mahlet' ); ?></p>
 
 					<?php
 					get_search_form();
@@ -28,7 +30,7 @@ get_header();
 					?>
 
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'school' ); ?></h2>
+						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'mahlet' ); ?></h2>
 						<ul>
 							<?php
 							wp_list_categories( array(
@@ -44,8 +46,8 @@ get_header();
 
 					<?php
 					/* translators: %1$s: smiley */
-					$school_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'school' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$school_archive_content" );
+					$mahlet_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'mahlet' ), convert_smilies( ':)' ) ) . '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$mahlet_archive_content" );
 
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
@@ -56,5 +58,10 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-get_footer();
+	</div>
+    <div class="col-sm-4">
+    <?php get_sidebar(); ?>
+    </div>
+  </div>
+</div>
+<?php get_footer(); ?>
